@@ -1,5 +1,7 @@
 package com.example.djezzame.channelmessaging;
 
+import android.os.AsyncTask;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
@@ -18,7 +20,7 @@ import javax.net.ssl.HttpsURLConnection;
 /**
  * Created by djezzame on 19/01/2018.
  */
-public class HttpPostHandler extends AsyncTask<PostRequest,Void,String>{
+public class HttpPostHandler extends AsyncTask<PostRequest,Void,String> {
 private ArrayList<OnDownloadListener> listeners = new ArrayList<OnDownloadListener> ();
 
 private void addOnDownloadListener(){
