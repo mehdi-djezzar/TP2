@@ -6,6 +6,7 @@ import java.util.HashMap;
  * Created by djezzame on 19/01/2018.
  */
 public class PostRequest {
+    private String URL;
 
     public String getURL() {
         return URL;
@@ -15,6 +16,8 @@ public class PostRequest {
         this.URL = URL;
     }
 
+    private HashMap<String, String> params;
+
     public HashMap<String, String> getParams() {
         return params;
     }
@@ -23,10 +26,9 @@ public class PostRequest {
         this.params = params;
     }
 
-    private String URL;
-    private HashMap<String,String > params;
-
-
-
+    public PostRequest(String url, HashMap<String , String> params)
+    {
+        this.URL =url;
+        this.params = params;
+    }
 }
-

@@ -23,9 +23,9 @@ import javax.net.ssl.HttpsURLConnection;
 public class HttpPostHandler extends AsyncTask<PostRequest,Void,String> {
     private ArrayList<OnDownloadListener> listeners = new ArrayList<OnDownloadListener>();
 
-    private void addOnDownloadListener() {
+    public void addOnDownloadListener( OnDownloadListener listener){listeners.add(listener);}
 
-    }
+
 
     public String performPostCall(String requestURL, HashMap<String, String>
             postDataParams) {
@@ -64,8 +64,9 @@ public class HttpPostHandler extends AsyncTask<PostRequest,Void,String> {
 
     @Override
     protected String doInBackground(PostRequest... params) {
+       return  performPostCall(params[0].getURL(),params[0].getParams());
 
-        return null;
+
     }
 
     private String getPostDataString(HashMap<String, String> params) throws
@@ -80,5 +81,15 @@ public class HttpPostHandler extends AsyncTask<PostRequest,Void,String> {
             result.append(URLEncoder.encode(entry.getValue(), "UTF-8"));
         }
         return result.toString();
+
+
+    }
+    @Override
+    protected void onPostExecute(String a){
+        //super.onPostExecute(a);
+        for (OnDownloadListener oneListener : listeners)
+        {
+            oneListener.onDownloadComplete(a);
+        }
     }
 }
