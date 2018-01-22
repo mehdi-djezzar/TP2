@@ -50,8 +50,8 @@ public class LoginActivity extends Activity implements  View.OnClickListener,OnD
                 paramsPost.put("username",edit_user.getText().toString());
                 paramsPost.put("password",edit_mdp.getText().toString());
                 Gson gson=new Gson();
-                
-                http.execute(new PostRequest("http://www.raphaelbischof.fr/messaging/?function=connect",paramsPost));
+
+                http.execute(new PostRequest("http://www.raphaelbischof;.fr/messaging/?function=connect",paramsPost));
                 break;
 
         }
