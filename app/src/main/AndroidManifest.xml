@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.djezzame.channelmessaging">
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
 
     <application
@@ -13,13 +13,17 @@
 
         <activity
             android:name="com.example.djezzame.channelmessaging.LoginActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category
-                    android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.djezzame.channelmessaging.ChannelListActivity"
+            android:label="@string/app_name">
+        </activity>
+
 
     </application>
 

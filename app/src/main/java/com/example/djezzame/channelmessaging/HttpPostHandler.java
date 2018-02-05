@@ -1,5 +1,6 @@
 package com.example.djezzame.channelmessaging;
 
+import android.app.Activity;
 import android.os.AsyncTask;
 
 import java.io.BufferedReader;
@@ -47,6 +48,7 @@ public class HttpPostHandler extends AsyncTask<PostRequest,Void,String> {
             os.close();
             int responseCode = conn.getResponseCode();
             if (responseCode == HttpsURLConnection.HTTP_OK) {
+
                 String line;
                 BufferedReader br = new BufferedReader(new
                         InputStreamReader(conn.getInputStream()));
